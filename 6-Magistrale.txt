@@ -1,0 +1,56 @@
+6. Selezionare tutti i corsi di laurea magistrale (38)
+
+===Database sql query parte 1
+
+== Table structure for table degrees
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id**//|bigint(20)|No|
+|department_id|bigint(20)|No|
+|name|varchar(255)|No|
+|level|varchar(255)|No|
+|address|varchar(255)|No|
+|email|varchar(255)|No|
+|website|varchar(255)|No|
+== Dumping data for table degrees
+
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
+|magistrale
