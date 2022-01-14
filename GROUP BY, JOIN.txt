@@ -1,0 +1,74 @@
+1-Contare gli iscritti per ogn anno
+
+SELECT COUNT(`id`) 
+AS 'total_students',
+YEAR(`enrolment_date`) 
+AS 'at_year'
+FROM `students`
+GROUP BY YEAR(`enrolment_date`);
+
+2-Insegnanti nello stesso edificio
+
+SELECT COUNT(`id`) 
+AS 'teachers_in_buildings', `office_address`
+FROM `teachers`
+GROUP BY `office_address`;
+
+3-Media voti per appello d'esame
+
+SELECT ROUND(AVG(`vote`), 1) 
+AS 'votes', `exam_id`
+FROM `exam_student`
+GROUP BY `exam_id`;
+
+4-Corsi per dipartimento
+
+SELECT COUNT(`id`) 
+AS 'department_degrees', `department_id`
+FROM `degrees`
+GROUP BY `department_id`;
+
+////////-------///////
+
+1-Studenti iscritti alla Laurea in Economia
+
+SELECT `degrees`.`name`, `students`.*
+FROM `degrees`
+INNER JOIN `students` 
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = 'Corso di Laurea in Economia'
+
+2-Corsi nel dipartimento di Neuroscienze
+
+SELECT `departments`.`name`, `degrees`.*
+FROM `departments`
+INNER JOIN `degrees` 
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`id`;
+
+3-Corsi spiegati da Fulvio Amato
+
+SELECT
+  `teachers`.`id`,
+  `teachers`.`name`,
+  `teachers`.`surname`,
+  `courses`.*
+FROM `teachers`
+INNER JOIN `course_teacher` 
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+INNER JOIN `courses` 
+ON `course_teacher`.`course_id` = `courses`.`id`
+WHERE `teachers`.`id` = 44;
+
+4-
+
+  SELECT
+  *
+FROM `students`
+INNER JOIN `degrees` 
+ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments` 
+ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY
+  `students`.`surname`,
+  `students`.`name`;
