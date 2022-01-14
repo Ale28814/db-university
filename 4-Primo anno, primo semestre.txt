@@ -1,3 +1,5 @@
+selezionare i corsi del primo semstre del primo anno
+
 ===Database sql query parte 1
 
 == Table structure for table courses
